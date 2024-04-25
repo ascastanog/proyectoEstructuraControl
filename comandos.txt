@@ -1,0 +1,9 @@
+# Crear un entorno virtual python
+python3 -m venv twenv
+source twenv/bin/activate
+
+# Instalar librerías en el entorno
+pip install -r requirements.txt
+
+# Compilar el protobufs tw.proto
+python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. twitter.proto
