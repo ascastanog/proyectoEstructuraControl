@@ -134,8 +134,7 @@ class Logueados:
     # Método que retorna los mensajes pendientes de enviar a un usuario y los borra del dataframe
         # Los retorna en forma de lista de listas [[escritor, mensaje], [escritor, mensaje], ...]
     def recibir_mensajes(self, user):
-        # TODO
-        return [["TODO", "Funcionalidad no implementada"]]
+        return self.mensajes[self.mensajes["detinatario"] == user][['user', 'mensaje']]
 
 
     # Imprimir mensajes pendientes de enviar
