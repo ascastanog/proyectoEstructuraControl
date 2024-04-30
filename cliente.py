@@ -117,7 +117,7 @@ def ver_usuarios_seguidos(stub, user, session):
     request = twitter_pb2.VerSeguidosRequest(user=user, session=session)
     respuesta = stub.VerSeguidos(request)
     print(respuesta.user)
-    print("Funcionalidad no implementada")
+
     # Mostrar los usuarios seguidos por el usuario
 
 def enviar_tuit(stub, user, session):

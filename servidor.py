@@ -146,7 +146,7 @@ class TwitterService(twitter_pb2_grpc.TwitterServicer):
         # Verificar si el usuario está conectado y la session es correcta
         #PREGUNTAR
         if logueados.comprobar_sesion(request.user, request.session):
-            seguidos = registrados.ver_siguiendo(request.user)
+            seguidos = registrados.ver_siguiendo(request.user).split(";")
 
             return twitter_pb2.VerSeguidosReply(user=seguidos)
 

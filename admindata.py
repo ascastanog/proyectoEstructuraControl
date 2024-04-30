@@ -47,8 +47,15 @@ class Registrados:
 
     # Método para dejar de seguir a un usuario.
     def dejar_seguir_usuario(self, user, usuario_seguido):
-        # TODO
-        print("Funcionalidad no implementada")
+
+        siguiendo = self.registrados.loc[self.registrados["user"] == user, "siguiendo"].values[0].split(";")
+        siguiendo.remove(usuario_seguido)
+        siguiendoStr = ""
+        for i, seguido in enumerate(siguiendo):
+            siguiendoStr +=seguido
+            if i+1 < len(siguiendo):
+                siguiendoStr +=";"
+        self.registrados.loc[self.registrados["user"] == user, "siguiendo"] = siguiendoStr
         # Quitar de usuarios seguidos al usuario_seguido
 
 
