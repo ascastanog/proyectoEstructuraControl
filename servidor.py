@@ -93,7 +93,7 @@ class TwitterService(twitter_pb2_grpc.TwitterServicer):
             return None
         # Verificar si el usuario está conectado y la session es correcta
 
-        print("Funcionalidad no implementada")
+
 
 
 
@@ -183,10 +183,10 @@ class TwitterService(twitter_pb2_grpc.TwitterServicer):
                 tuits.append(tuit)
 
             return twitter_pb2.RecibirTuitsReply(tuit=tuits)
-        print("Hola")
+
 
         # Leer la lista de listas con los mensajes pendientes construir el Reply como lista de twitter_pb2.Tuit
-        print("Funcionalidad no implementada")
+
 
         
 

@@ -35,8 +35,8 @@ def menu_logueado():
 def registrar_usuario(stub):
 
 
-    user = input("Introduzca el usuario:")
-    password = input("Introduzca la contraseña")
+    user = input("Introduzca el usuario: ")
+    password = input("Introduzca la contraseña: ")
     # Preguntar el usuario y la contraseña
     # Llamar a la función remota Registrar
     request = twitter_pb2.RegistrarRequest(user=user, password=password)
@@ -105,7 +105,6 @@ def dejar_seguir_usuario(stub, user, session):
     no_seguir = input("Ingrese a quien quieres dejar de seguir")
     request = twitter_pb2.SeguirRequest(user=user, session=session, user_to_follow=no_seguir)
     respuesta = stub.DejarSeguir(request)
-    print("Funcionalidad no implementada")
 
     if respuesta.error == 0:
         print("no sigues al usuario ", no_seguir)
